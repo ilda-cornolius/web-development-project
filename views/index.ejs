@@ -1,0 +1,74 @@
+
+
+
+<%- include('partials/header.ejs') %>
+<style>
+/* a.button {
+    display: block;
+    height: 20px;
+    width: 120px;
+    border: 2px solid #000;
+    background-color: aquamarine;
+    text-decoration: none;
+} */
+
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+
+  }
+
+.button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.title1{
+font-size: xx-large;
+}
+
+.title2{
+font-size: small;
+}
+
+
+</style>
+
+
+<h1>Welcome to my home page!</h1>
+<br>
+
+<div class="title1">Mission Statement:</div>
+<br>
+
+<p class="title2">
+    Our company wants to make useful applications that can enrich the lives of others!</p>
+
+    <br>
+<h4>Please click this button to enter the about page.</h4>
+<br>
+<a href="/about" class="button">Go to About Page</a>
+<br>
+
+<%- title %>
+
+
+<!-- <a
+<button type="button">About me!</button> -->
