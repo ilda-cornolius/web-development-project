@@ -1,8 +1,18 @@
+<!-- Contact
+Ildaphonse Cornolius
+ID: 300699371
+Date: October 2nd, 2022 -->
+
+<header>
+    Contact
+</header>
+<!-- Linking to the bootstrap css  -->
 <link rel="stylesheet" href="./css/bootstrap.min.css">
-
+<!-- 
+Linking to the header.ejs file to be used as a navigation bar  -->
 <%- include('partials/header.ejs') %>
-
-
+<!-- 
+Displaying the company's contact information  -->
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Contact</h5>
@@ -11,13 +21,14 @@
       <p class="card-text">email: ildacorn@gmail.com</p>
       <p class="card-text">address: 192 Trafalger Road</p>
 
-      
-      <a class="card-link">Card link</a>
-      <a class="card-link">Another link</a>
+
     </div>
 
+
+<!-- 
+Displaying a form for the user to enter their info, which will be displayed in the home page  -->
     <form action="/index" method="get">
-        <h2>Sign Up Form</h2>
+        <h2>Contact Form</h2>
         <hr>
                       
           <label>First name</label>
@@ -49,7 +60,4 @@
   </div>
 
 
-<!-- <div class="panel panel-default">
-    <div class="panel-heading">Panel Heading</div>
-    <div class="panel-body">Panel Content</div>
-  </div> -->
+  <%- include('partials/footer.ejs') %>

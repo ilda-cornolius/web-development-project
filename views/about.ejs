@@ -1,15 +1,42 @@
+<!-- the about page -->
+
+<!-- About
+Ildaphonse Cornolius
+ID: 300699371
+Date: October 2nd, 2022 -->
+
+<header>
+    About
+</header>
+<!-- 
+Linking to the bootstrap css  -->
 <link rel="stylesheet" href="./css/aboutstyle.css">
-
-
+<!-- 
+Displaying the header.ejs file at the top of the page, to be used as a navigation bar  -->
 <%- include('partials/header.ejs') %>
-
+<!-- 
+Listing an about me description of the company  -->
 <h1>
     About me
 </h1>
+<br>
+
+<h3>Ildaphonse Cornolius</h3>
+<img height="200px" width="200px" src="images/profile.png"/>
+
+<br>
+
+<p>My name is Ildaphonse Cornolius, I'm a 28 year old student attending Centennial College
+    I enjoy programming because it can provide a use to everyday people to enrich their lives.
+    I particular enjoy making mobile software applications because a large majority of people in north america own smartphones.
+    My other hobbies include playing piano, skateboarding and hanging out with my friends. 
+</p>
 
 <div>
 <p>Here is a link to my resume</p>
-
+<!-- A link to the company's resume  -->
 <a href="resume.pdf">My Resume</a>
 
 </div>
+
+<%- include('partials/footer.ejs') %>

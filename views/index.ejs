@@ -1,6 +1,12 @@
-
-
-
+<!-- home page / index
+Ildaphonse Cornolius
+ID: 300699371
+Date: October 2nd, 2022 -->
+<header>
+    home
+</header>
+<!-- 
+including the header.ejs as a navigation bar  -->
 <%- include('partials/header.ejs') %>
 <style>
 /* a.button {
@@ -50,8 +56,8 @@ font-size: small;
 
 
 </style>
-
-
+<!-- 
+Displaying a welcome message to the user  -->
 <h1>Welcome to my home page!</h1>
 <br>
 
@@ -64,6 +70,7 @@ font-size: small;
     <br>
 <h4>Please click this button to enter the about page.</h4>
 <br>
+<!-- Links to the about page .ejs file  -->
 <a href="/about" class="button">Go to About Page</a>
 <br>
 
@@ -72,3 +79,4 @@ font-size: small;
 
 <!-- <a
 <button type="button">About me!</button> -->
+<%- include('partials/footer.ejs') %>
