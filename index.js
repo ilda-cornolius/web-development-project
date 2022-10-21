@@ -1,7 +1,6 @@
 // Index 
 // Ildaphonse Cornolius
-// ID: 300699371
-// Date: October 2nd, 2022
+// Date: October 21st, 2022
 
 //the index javascript
 //loading the express / path and other objects to use 

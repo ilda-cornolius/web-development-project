@@ -1,12 +1,74 @@
+const { render } = require('ejs');
 const express = require('express');
 
 const router = express.Router()
 
+const fs = require('fs');
+
+const path = 'info.txt'
+
+
+
 router.get('/', function(req, res, next){
 
-    res.render("index",{title:"Assignment 1"})
+    res.render("index",{title:"UserInfo"})
 })
 
+
+
+router.get('/index', function(req, res, next){
+
+  res.render("index",{title:"UserInfo"})
+})
+
+
+router.get('/data', function(req, res, next){
+
+
+  console.log("reading file");
+  try{
+   console.log("Trying to read file now");
+   var data = fs.readFileSync("info.txt",
+   {encoding:'utf8', flag:'r'});
+   var content = JSON.parse(data)
+   console.log("Calling Contact Now", data);
+  //  res.send(content);
+
+    res.render("data",{data:content})
+  }catch(err){
+   // console.log(err);
+   console.log('File Does not Exist');
+   var content = "File not found";
+  //  res.send(content);
+    res.render("data",{data:content})
+  }
+
+})
+
+
+router.get('/delete', function(req,res,next){
+  console.log("Delete")
+  try {
+    if (fs.existsSync(path)) {
+      //file exists
+      try {
+        fs.unlinkSync(path)
+    
+        res.render("contact",{title:"UserInfo"})
+        //file removed
+      } catch(err) {
+        console.error(err)
+      }
+      
+    }
+  } catch(err) {
+    console.error(err)
+  }
+
+
+
+  
+})
 // app.get("/", (req, res) => {
 // //   res.send("Hello, World!");
 
@@ -16,24 +78,50 @@ router.get('/', function(req, res, next){
 // });
 
 
-router.get("/index", (req, res) => {
+router.get("/contact", (req, res) => {
     //   res.send("Hello, World!");
     var query=req.query;
 
     console.log("QUERY:");
     console.log(req.query);
       //res.render("index",{title:"Assignment 1"})
-      if(query){
+      if(query && Object.keys(query).length!=0){
         var s = "";
         for(var p in query){
             s+=p+" : "+query[p]+" <br>";
         }
+        var content = JSON.stringify(s);
+       
+console.log("writing to file");
+
+        try {
+          fs.writeFileSync("info.txt", content);
+          // file written successfully
+        } catch (err) {
+          console.error(err);
+        }
+       
         //res.render("index",{title: JSON.stringify(query)})
-        res.render("index",{title: s})
+        res.render("contact",{title: s})
 
       }
+      
       else{
-      res.render("index",{title:"Assignment 1"})
+        console.log("reading file");
+       try{
+        console.log("Trying to read file now");
+        var data = fs.readFileSync("info.txt",
+        {encoding:'utf8', flag:'r'});
+        var content = JSON.parse(data)
+        console.log("Calling Contact Now", data);
+        res.render("contact",{title:content})
+       }catch(err){
+        // console.log(err);
+        console.log('File Already Deleted');
+        var content = "Customer Info";
+        res.render("contact",{title:content})
+       }
+        
     }
     
     });
